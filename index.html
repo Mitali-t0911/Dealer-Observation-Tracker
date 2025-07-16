@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dealer Observation Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Dealer Observation Tracker</h1>
+    <p class="subtitle">Surveillance System</p>
+  </header>
+
+  <form id="trackerForm">
+    <input type="hidden" id="editingIndex" />
+
+    <div class="form-group">
+      <label>Branch Code</label>
+      <input type="text" id="branchCode" pattern="[A-Za-z0-9]+" required />
+    </div>
+
+    <div class="form-group">
+      <label>Branch Manager</label>
+      <input type="text" id="branchManager" required />
+    </div>
+
+    <div class="form-group">
+      <label>Zonal Manager</label>
+      <input type="text" id="zonalManager" required />
+    </div>
+
+    <div class="form-group">
+      <label>Observation Subject</label>
+      <input type="text" id="observationSubject" required />
+    </div>
+
+    <div class="form-group">
+      <label>Sent Date</label>
+      <input type="date" id="sentDate" required />
+    </div>
+
+    <div class="form-group">
+      <label>Reply Date</label>
+      <input type="date" id="replyDate" required />
+    </div>
+
+    <div class="form-group">
+      <label>Days Taken</label>
+      <input type="number" id="daysTaken" readonly />
+    </div>
+
+    <div class="form-group">
+      <label>Reply Summary</label>
+      <textarea id="replyMail" rows="3" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Action Taken</label>
+      <select id="actionTaken" required>
+        <option value="">Select</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Branch Status</label>
+      <select id="branchActive" required>
+        <option value="">Select</option>
+        <option>Active</option>
+        <option>Inactive</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Screenshot Captured</label>
+      <select id="screenshotCaptured" required>
+        <option value="">Select</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Upload Screenshot</label>
+      <input type="file" id="screenshotUpload" accept="image/*" />
+    </div>
+
+    <button type="submit" id="submitBtn">Submit</button>
+    <button type="button" id="downloadBtn">Download CSV</button>
+  </form>
+
+  <h2>Saved Reports</h2>
+  <table id="dataTable">
+    <thead>
+      <tr>
+        <th>Branch Code</th>
+        <th>Manager</th>
+        <th>Zonal</th>
+        <th>Subject</th>
+        <th>Sent</th>
+        <th>Reply</th>
+        <th>Days</th>
+        <th>Summary</th>
+        <th>Action</th>
+        <th>Status</th>
+        <th>Screenshot?</th>
+        <th>Screenshot Link</th>
+        <th>Last Modified</th>
+        <th>Edit</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
